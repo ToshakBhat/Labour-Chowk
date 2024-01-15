@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "384268837016",
+    "firebase_url": "https://labourchowk-d4f34-default-rtdb.firebaseio.com",
+    "project_id": "labourchowk-d4f34",
+    "storage_bucket": "labourchowk-d4f34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:384268837016:android:40e7f9570a9b5dc520f0ed",
+        "android_client_info": {
+          "package_name": "com.example.labourchowk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEdN-q3ZkHxX3N5QfiDeDWIwvdHRvhZjo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

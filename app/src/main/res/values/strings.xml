@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name" translatable="false">LabourChowk</string>
+    <string name="title" translatable="false">Namaste! Welcome to Labour Chowk</string>
+    <string name="button1" translatable="false">Log In</string>
+    <string name="create_account" translatable="false">Create Account</string>
+    <string name="title_signUp" translatable="false">Sign Up Options</string>
+    <string name="LabourSignUpButton" translatable="false">Labour</string>
+    <string name="EmployerSignUpButton" translatable="false">Employer</string>
+    <string name="title_labourSignUp" translatable="false">Labour Sign Up</string>
+    <string name="hint1" translatable="false">Enter your Phone Number</string>
+    <string name="verification_code" translatable="false">Enter the verification Code</string>
+    <string name="send1" translatable="false">Get Code</string>
+    <string name="send2" translatable="false">Ok</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="checkbox">I,hereby declare and affirm my commitment to fostering a respectful and harassment-free workplace environment</string>
+</resources>

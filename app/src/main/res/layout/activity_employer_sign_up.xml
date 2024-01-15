@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EmployerSignUp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/EmployerSignUp"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/employer"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/name_employer"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:hint="Enter your Name"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/location_employer"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:hint="Enter your location"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/enter_mobile_number_employer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:hint="@string/hint1"
+        android:inputType="phone" />
+
+    <Button
+        android:id="@+id/send1_employer"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/send1" />
+
+    <EditText
+        android:id="@+id/verification_code_employer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:hint="@string/verification_code"
+        android:inputType="number"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/send2_employer"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/send2"
+        android:visibility="invisible" />
+
+    <CheckedTextView
+        android:id="@+id/checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/checkbox"
+        android:textSize="16sp"
+        android:textStyle="italic" />
+
+</LinearLayout>
