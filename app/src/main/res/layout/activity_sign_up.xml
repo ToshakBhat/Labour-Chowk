@@ -13,7 +13,7 @@
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/construction_worker"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
@@ -30,13 +30,35 @@
         android:textSize="20sp"
         android:textStyle="bold|italic" />
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/SahayakSignUp"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/sahayak"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sahayak"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/EmployerSignUp"
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/employer"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"

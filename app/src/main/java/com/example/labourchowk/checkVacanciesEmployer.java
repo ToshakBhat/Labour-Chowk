@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +34,8 @@ public class checkVacanciesEmployer extends AppCompatActivity {
     String wage2;
     String experience;
     String work_type;
+    String applier;
+    Button button_applier;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference reference = database.getReference();
     @Override
@@ -45,6 +49,7 @@ public class checkVacanciesEmployer extends AppCompatActivity {
         job_image = findViewById(R.id.job_image);
         wage_ask = findViewById(R.id.wage);
         employment_status = findViewById(R.id.employment_status);
+        button_applier = findViewById(R.id.applier);
 
         Intent intent = getIntent();
         if(intent != null && intent.hasExtra("mob")){
@@ -83,6 +88,22 @@ public class checkVacanciesEmployer extends AppCompatActivity {
                         }else{
                             wage2 = "Not provided";
                         }
+                        if (userSnapshot.child("got_worker").exists()){
+                            applier = Objects.requireNonNull(userSnapshot.child("got_worker").getValue()).toString();
+                            employment_status.setVisibility(View.INVISIBLE);
+                            button_applier.setVisibility(View.VISIBLE);
+                            button_applier.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent = new Intent(checkVacanciesEmployer.this,checkVacanciesEmployer2.class);
+                                    intent.putExtra("mob",userSnapshot.child("got_worker").getValue().toString());
+                                    startActivity(intent);
+                                }
+                            });
+                        }else{
+                            applier = "Not applied yet";
+                            employment_status.setText("Not yet assigned work");
+                        }
                         break;
                     }
                 }
@@ -91,6 +112,7 @@ public class checkVacanciesEmployer extends AppCompatActivity {
                 vacancy_experience.setText("Experience : "+experience + " years");
                 vacancy_work_type.setText("Work-Type : "+work_type);
                 wage_ask.setText("Wage(one day) : "+wage2 +" Rs");
+
                 employment_status.setText("Not yet assigned work");
 
                 String resourceName = job_preference.toLowerCase(); // replace with your resource name

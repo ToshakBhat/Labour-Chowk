@@ -112,12 +112,17 @@ public class MainActivity extends AppCompatActivity {
                         Intent extras e.g HashMap*/
                        i.putExtra("mob",complete_mobile_number);
                        startActivity(i);
-                       finish();
+
                    } else if (status.equals("Employer")) {
                        Intent i = new Intent(MainActivity.this,EmployerPortal.class);
                        i.putExtra("mob",complete_mobile_number);
                        startActivity(i);
-                       finish();
+
+                   }else if(status.equals("Sahayak")){
+                       Intent i = new Intent(MainActivity.this,SahayakPortal.class);
+                       i.putExtra("mob",complete_mobile_number);
+                       startActivity(i);
+
                    }
                    //Toast.makeText(MainActivity.this,value1,Toast.LENGTH_SHORT).show();
 

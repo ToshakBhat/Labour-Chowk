@@ -85,10 +85,12 @@ public class LabourPortal extends AppCompatActivity {
                     }
                 }
                 for (DataSnapshot Employer_snapshot : mobileNumbersListSnapshot) {
-                    if(Employer_snapshot.child("Location").getValue().toString().toLowerCase().equals(my_location.toLowerCase())){
+                    if(Employer_snapshot.child("job_preference").getValue().toString().toLowerCase().equals(my_job_preference.toLowerCase())){
                         createLinearLayout(Employer_snapshot,"ground");
-                    }else{
+                    } else if (Employer_snapshot.child("Location").getValue().toString().toLowerCase().equals(my_location.toLowerCase())) {
                         createLinearLayout(Employer_snapshot,"ground2");
+                    } else{
+                        createLinearLayout(Employer_snapshot,"ground3");
                     }
 
                     // Create a Linearlayout dynamically for each mobile number
@@ -117,17 +119,26 @@ public class LabourPortal extends AppCompatActivity {
     }
 
     private void createLinearLayout(DataSnapshot mobileNumberObj,String name_of_linear_layout) {
-        // Create a ScrollView
-        /*HorizontalScrollView scrollView = new HorizontalScrollView(this);
-        scrollView.setLayoutParams(new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT));
-*/      //Set the Image
+        LinearLayout img_container = new LinearLayout(this);
+        img_container.setOrientation(LinearLayout.HORIZONTAL);
+        //img_container.setBackgroundColor(getResources().getColor(R.color.black));
+        LinearLayout.LayoutParams layoutParamsimg = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT, // Width
+                LinearLayout.LayoutParams.WRAP_CONTENT // Height
+        );
+        layoutParamsimg.gravity = Gravity.CENTER;
+        int leftMargin2 = 0; // in pixels
+        int topMargin2 = 10; // in pixels
+        int rightMargin2 = 0; // in pixels
+        int bottomMargin2 = 10; // in pixels
+
+        layoutParamsimg.setMargins(leftMargin2, topMargin2, rightMargin2, bottomMargin2);
+        img_container.setLayoutParams(layoutParamsimg);
 
         CircleImageView img = new CircleImageView(this);
 
-        int widthInPixels = 200; // Replace with your desired width in pixels
-        int heightInPixels = 200; // Replace with your desired height in pixels
+        int widthInPixels = 250; // Replace with your desired width in pixels
+        int heightInPixels = 250; // Replace with your desired height in pixels
 
         ViewGroup.LayoutParams layoutParamsImg = new ViewGroup.LayoutParams(widthInPixels, heightInPixels);
         img.setLayoutParams(layoutParamsImg);
@@ -138,6 +149,7 @@ public class LabourPortal extends AppCompatActivity {
 
         // Now, resourceId contains the integer id of the drawable
         img.setImageResource(resourceId);
+        img_container.addView(img);
 
         LinearLayout layout1 = new LinearLayout(this);
         int uniqueId = generateUniqueId();
@@ -146,8 +158,8 @@ public class LabourPortal extends AppCompatActivity {
         layout1.setOrientation(LinearLayout.VERTICAL);
         layout1.setBackgroundColor(getResources().getColor(R.color.blue));
 
-        int widthInPixels2 = 400;
-        int heightInPixels2 = 400;
+        int widthInPixels2 = 500;
+        int heightInPixels2 = 500;
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 widthInPixels2, // Width
                 heightInPixels2 // Height
@@ -185,7 +197,7 @@ public class LabourPortal extends AppCompatActivity {
             }
         });
 
-        layout1.addView(img);
+        layout1.addView(img_container);
         layout1.addView(description);
         layout1.addView(location);
         layout1.addView(view);
@@ -195,6 +207,9 @@ public class LabourPortal extends AppCompatActivity {
             container.addView(layout1);
         } else if (Objects.equals(name_of_linear_layout, "ground2")) {
             LinearLayout container = findViewById(R.id.ground2);
+            container.addView(layout1);
+        }else{
+            LinearLayout container = findViewById(R.id.ground3);
             container.addView(layout1);
         }
 
